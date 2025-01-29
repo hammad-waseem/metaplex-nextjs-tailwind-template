@@ -19,3 +19,7 @@
     text-wrap: balance;
   }
 }
+
+.rounded-shape {
+  border-radius: 9999px;
+}
