@@ -38,6 +38,8 @@ import {
   usersAllowList,
 } from "@/lib/candy";
 
+const goldenTicketsArray = [1, 4, 8, 11, 16, 19];
+
 export default function MintPage() {
   const [selected, setSelected] = useState<number>(2);
   const [loading, setLoading] = useState<boolean>(false);
@@ -54,6 +56,7 @@ export default function MintPage() {
 
   const maxlg = useMediaQuery("(max-width: 1023px)");
   const maxSm = useMediaQuery("(max-width: 639px)");
+  const maxXs = useMediaQuery("(max-width: 400px)");
   const umiStore = useUmiStore.getState();
 
   useEffect(() => {
@@ -126,7 +129,7 @@ export default function MintPage() {
           id: "test",
           method: "getAssetBatch",
           params: {
-            ids: mints.map((u) => u.publicKey.toString()),
+            ids: mints.map((u) => u?.toString()),
           },
         }),
       });
@@ -150,7 +153,7 @@ export default function MintPage() {
           {umiStore?.activeGroup?.label !== "burn" ? (
             <div className="flex flex-col h-[100vh]   bg-[#EFE6D3] py-10">
               <>
-                <div className="lg:container  items-center justify-center mx-auto py-5 lg:py-14 uppercase w-full lg:px-0 px-2 xs:px-4 ">
+                <div className="xl:container  items-center justify-center mx-auto py-5 lg:py-14 uppercase w-full lg:px-0 px-2 xs:px-4 ">
                   <div className="mx-5 md:mx-0 items-center justify-center">
                     <h3
                       className={`${inria_serif_extra_bold.className} text-[#252525] text-center font-black text-[22px] md:text-[40px] leading-none `}
@@ -189,15 +192,15 @@ export default function MintPage() {
                         className="absolute -bottom-[6rem] -right-2  lg:-right-[4.5rem] lg:-bottom-[5.5rem]"
                         src={MintRight}
                         alt="mint left"
-                        width={maxlg ? 80 : 80}
-                        height={maxlg ? 80 : 80}
+                        width={maxlg ? 100 : 150}
+                        height={maxlg ? 100 : 150}
                       />
                       <NextImage
-                        className="absolute -left-2 -bottom-24  lg:-left-48 lg:-bottom-[110px]"
+                        className="absolute -left-2 -bottom-32  lg:-left-48 lg:-bottom-[110px]"
                         src={MintLeft}
                         alt="mint right"
-                        width={maxlg ? 120 : 120}
-                        height={maxlg ? 120 : 120}
+                        width={maxlg ? 140 : 290}
+                        height={maxlg ? 140 : 290}
                       />
 
                       {walletState?.connected && !walletState?.connecting ? (
@@ -206,8 +209,12 @@ export default function MintPage() {
                             <button
                               className="absolute right-6 top-6  z-10 cursor-pointer"
                               onClick={() => {
-                                setNftsMinted([]);
-                                setCurrentSlide(0);
+                                if (hasGoldenticket) {
+                                  setHasGoldenticket(false);
+                                } else {
+                                  setNftsMinted([]);
+                                  setCurrentSlide(0);
+                                }
                               }}
                             >
                               <NextImage
@@ -279,9 +286,9 @@ export default function MintPage() {
                                     borderRadius: "9999px",
                                   }}
                                   className="bg-[#F7D05A] py-1 border-2 light-border w-[40%] hover:bg-[#f9e4a2] transition-all hover:delay-75 duration-200     rounded-[2px] inline-flex justify-center gap-x-1 text-[8px]  xs:text-[10px] sm:text-[10px] md:text-[12px] text-black text-center font-extrabold uppercase"
-                                  onClick={() =>
-                                    setHasGoldenticket(!hasGoldenticket)
-                                  }
+                                  // onClick={() =>
+                                  //   setHasGoldenticket(!hasGoldenticket)
+                                  // }
                                 >
                                   Subscribe Now
                                 </button>
@@ -446,9 +453,11 @@ export default function MintPage() {
                                   if (umi) {
                                     umiStore.fetchPriceAndActiveGroup();
                                     setTimeout(async () => {
-                                      const nftData = await fetchNftData(umi);
-
+                                      const nftData = await fetchNftData(
+                                        umi.map((u) => u?.publicKey.toString())
+                                      );
                                       console.log("nftData", nftData);
+
                                       if (
                                         //check nft data if any item is null
                                         nftData &&
@@ -456,6 +465,7 @@ export default function MintPage() {
                                       ) {
                                         setNftsMinted(nftData);
                                         setLoading(false);
+
                                         toast.update(toastId, {
                                           render: `Successfully minted ${selected} NFT${
                                             selected > 1 ? "s" : ""
@@ -466,6 +476,30 @@ export default function MintPage() {
                                           autoClose: 5000,
                                         });
                                         umiStore.fetchPriceAndActiveGroup();
+
+                                        //now check if nftData has golden ticket
+                                        const goldenTicketNft = nftData.find(
+                                          (nft: any) =>
+                                            goldenTicketsArray.includes(
+                                              Number(
+                                                nft?.content?.metadata?.name.split(
+                                                  "#"
+                                                )[1]
+                                              )
+                                            )
+                                        );
+                                        console.log(
+                                          "goldenTicketNft",
+                                          goldenTicketNft
+                                        );
+                                        if (goldenTicketNft) {
+                                          //set has golden ticket after 10 seconds of minting
+                                          setTimeout(() => {
+                                            setHasGoldenticket(true);
+                                          }, 10000);
+                                        }
+
+                                        //now
                                       } else {
                                         setLoading(false);
                                         toast.update(toastId, {
@@ -695,26 +729,26 @@ export default function MintPage() {
                     <div className="flex justify-center items-center pt-6">
                       <div className="flex justify-center items-center gap-4">
                         <div className="flex justify-center items-center gap-1 sm:gap-2">
-                          <button className="bg-[#F7D05A] rounded-full py-1 px-4 sm:py-2 border-2 sm:px-6  lg:py-3 lg:px-8 light-border  hover:bg-[#f9e4a2] transition-all hover:delay-75 duration-200      inline-flex justify-center gap-x-1 text-[8px]  xs:text-[10px] sm:text-[10px] md:text-[12px] text-black text-center font-extrabold uppercase">
+                          <button className="bg-[#F7D05A] rounded-full py-1 px-3 xs:px-4 sm:py-2 border-2 sm:px-6  lg:py-3 lg:px-8 light-border  hover:bg-[#f9e4a2] transition-all hover:delay-75 duration-200      inline-flex justify-center gap-x-1 text-[8px]  xs:text-[10px] sm:text-[10px] md:text-[12px] text-black text-center font-extrabold uppercase">
                             <NextImage
                               src={twitterIcon}
                               alt="ig icon"
-                              width={maxSm ? 10 : maxlg ? 15 : 18}
-                              height={maxSm ? 10 : maxlg ? 15 : 18}
+                              width={maxXs ? 8 : maxSm ? 10 : maxlg ? 15 : 18}
+                              height={maxXs ? 8 : maxSm ? 10 : maxlg ? 15 : 18}
                             />
                           </button>
-                          <button className="bg-[#F7D05A] rounded-full py-1 px-4 sm:py-2 border-2 sm:px-6 lg:py-3 lg:px-8 light-border  hover:bg-[#f9e4a2] transition-all hover:delay-75 duration-200      inline-flex justify-center gap-x-1 text-[8px]  xs:text-[10px] sm:text-[10px] md:text-[12px] text-black text-center font-extrabold uppercase">
+                          <button className="bg-[#F7D05A] rounded-full py-1 px-3 xs:px-4 sm:py-2 border-2 sm:px-6 lg:py-3 lg:px-8 light-border  hover:bg-[#f9e4a2] transition-all hover:delay-75 duration-200      inline-flex justify-center gap-x-1 text-[8px]  xs:text-[10px] sm:text-[10px] md:text-[12px] text-black text-center font-extrabold uppercase">
                             <NextImage
                               src={igIcon}
                               alt="ig icon"
-                              width={maxSm ? 10 : maxlg ? 15 : 18}
-                              height={maxSm ? 10 : maxlg ? 15 : 18}
+                              width={maxXs ? 8 : maxSm ? 10 : maxlg ? 15 : 18}
+                              height={maxXs ? 8 : maxSm ? 10 : maxlg ? 15 : 18}
                             />
                           </button>
-                          <button className="bg-[#F7D05A] rounded-full py-1 px-4 sm:py-2  border-2 sm:px-6 lg:py-3 lg:px-8 light-border  hover:bg-[#f9e4a2] transition-all hover:delay-75 duration-200      inline-flex justify-center gap-x-1 text-[8px]  xs:text-[10px] sm:text-[10px] md:text-[12px] text-black text-center font-extrabold uppercase">
+                          <button className="bg-[#F7D05A] rounded-full py-1 px-3 xs:px-4 sm:py-2  border-2 sm:px-6 lg:py-3 lg:px-8 light-border  hover:bg-[#f9e4a2] transition-all hover:delay-75 duration-200      inline-flex justify-center gap-x-1 text-[8px]  xs:text-[10px] sm:text-[10px] md:text-[12px] text-black text-center font-extrabold uppercase">
                             <NextImage
-                              width={maxSm ? 10 : maxlg ? 15 : 18}
-                              height={maxSm ? 10 : maxlg ? 15 : 18}
+                              width={maxXs ? 8 : maxSm ? 10 : maxlg ? 15 : 18}
+                              height={maxXs ? 8 : maxSm ? 10 : maxlg ? 15 : 18}
                               src={tiktokIcon}
                               alt="ig icon"
                             />

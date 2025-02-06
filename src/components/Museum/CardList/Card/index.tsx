@@ -86,10 +86,7 @@ export default function Card({
               onVendingMachine ? "text-white" : "text-black"
             } ${inria_serif_bold.className}`}
           >
-            #
-            {onVendingMachine
-              ? item?.name?.split("pooks")[1]
-              : item?.name?.split("#")[1]}
+            #{item?.name?.split("#")[1]}
           </h5>
           {/* {onProfile && (
             <div className="text-xs font-extrabold text-center text-[#787878]">

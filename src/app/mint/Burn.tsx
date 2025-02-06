@@ -97,7 +97,7 @@ export const Burn = ({
   const { umi } = useUmiStore();
 
   const burnPooks = async () => {
-    // console.log(selectedNfts, "Button Pressed");
+    console.log(selectedNfts, "Button Pressed");
     setLoading(true);
     try {
       const res = await axios.post(`${OFFCHAIN_URL}/mint/burn`, {
@@ -120,10 +120,10 @@ export const Burn = ({
 
       //call fetchNftData to update the nfts after 2 seconds of burning
       setTimeout(async () => {
-        const data = await fetchNftData([res.data.mint]);
+        const data = await fetchNftData(res?.data?.mint);
         console.log(data, "DATA");
         setOkds(data);
-      }, 5000);
+      }, 2000);
 
       console.log(txId, "TRANSACTION ID");
       setLoading(false);
@@ -384,7 +384,7 @@ export const Burn = ({
                           }}
                           className={` py-1 border-2 max-w-52 light-border hover:bg-[#f9e4a2] ${
                             //if selected nfts are not multiple of 3 then disable the button
-                            selectedNfts.length % burnedPerOkd !== 0 ||
+                            selectedNfts.length % burnedPerOkd == 0 ||
                             selectedNfts.length === 0
                               ? "cursor-not-allowed  bg-[#f9e4a2]"
                               : "bg-[#F7D05A]"
