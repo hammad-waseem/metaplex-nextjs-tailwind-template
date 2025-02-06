@@ -1,20 +1,19 @@
 "use client";
 
-import {
-  WalletProvider
-} from "@solana/wallet-adapter-react";
+import { WalletProvider } from "@solana/wallet-adapter-react";
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import React, { FC, useMemo } from "react";
 
 // Default styles that can be overridden by your app
 import "@solana/wallet-adapter-react-ui/styles.css";
 
+import { ToastContainer } from "react-toastify";
+
 type Props = {
   children?: React.ReactNode;
 };
 
 export const WalletAdapterProvider: FC<Props> = ({ children }) => {
-
   const wallets = useMemo(
     () => [
       /**
@@ -35,13 +34,23 @@ export const WalletAdapterProvider: FC<Props> = ({ children }) => {
   );
 
   return (
+    <WalletProvider wallets={wallets} autoConnect>
+      <WalletModalProvider>
+        {/* Your app's components go here, nested within the context providers. */}
 
-      <WalletProvider wallets={wallets} autoConnect>
-        <WalletModalProvider>
-          {/* Your app's components go here, nested within the context providers. */}
-          {children}
-        </WalletModalProvider>
-      </WalletProvider>
-
+        <ToastContainer
+          position="bottom-left"
+          autoClose={4000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+        {children}
+      </WalletModalProvider>
+    </WalletProvider>
   );
 };

@@ -3,108 +3,121 @@
 import MetaplexLogo from "@/assets/logos/metaplex-logo.png";
 import Header from "@/components/header";
 import transferSolToDestination from "@/lib/transferSol";
+import {
+  inria_serif_bold,
+  inria_serif_extra_bold,
+  inria_serif_medium,
+  inria_serif_regular,
+} from "../../fonts";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Header />
+    <div className="flex flex-col lg:h-[100vh]    bg-[#EFE6D3] py-14  lg:py-10">
+      <div className="lg:w-[75%] xl:w-[70%] 2xl:w-[60%]  items-center justify-center mx-auto py-5 lg:py-14 uppercase w-full lg:px-0 px-2 xs:px-4 ">
+        <div className="mx-5 md:mx-0 items-center justify-center">
+          <h3
+            className={`${inria_serif_medium.className} text-[#7A7A7A] text-center font-black text-[25px] lg:text-[25px] md:text-[40px] leading-none `}
+          >
+            OKD MINT
+          </h3>
+          <h3
+            className={`${inria_serif_extra_bold.className} text-[#303030] text-center font-black text-[40px] md:text-[40px] leading-none `}
+          >
+            How will this Work?
+          </h3>
 
-      <div className="relative z-[-1] flex place-items-center ">
-        <img
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src={MetaplexLogo.src}
-          alt="<Metaplex Logo"
-          width={500}
-        />
-      </div>
+          <p
+            className={`${inria_serif_regular.className} pb-2  text-[#303030] text-center text-[15px]`}
+          >
+            OKD COLLECTION WILL HAVE 3 phases. MINTED ON SOLANA AT [INSERT DATE
+            HERE]
+          </p>
+        </div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://developers.metaplex.com"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Solana and the Metaplex programs from the developer hub.
-          </p>
-        </a>
-        <a
-          href="https://github.com/metaplex-foundation"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Github{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            The Metaplex Foundation&apos;s Github projects.
-          </p>
-        </a>
-        <a
-          href="https://discord.com/invite/metaplex"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Discord{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Come chat and find support in the Metaplex Discord server.
-          </p>
-        </a>
-        <a
-          href="https://x.com/metaplex"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Twitter{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            The Metaplex Twitter/X account for news and updates.
-          </p>
-        </a>
-        //add a button to transfer sol
-        <button
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          rel="noopener noreferrer"
-          onClick={async () => {
-            await transferSolToDestination({
-              destination: "BoFyYWdCcSst1AmqyHtjvrpEEzy74asrpGQjaNa1vmWL",
-              amount: 1,
-            });
-          }}
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Transfer SOL{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Transfer SOL to destination
-          </p>
-        </button>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 mt-5">
+          <div className="bg-[#353434] px-12  sm:px-20  lg:px-8  xl:px-12  py-12 pb-40 ">
+            <h5
+              className={`${inria_serif_medium.className} text-white text-[15px] leading-none`}
+            >
+              Phase 1
+            </h5>
+            <h3
+              className={`${inria_serif_extra_bold.className} text-[#F7D05A] leading-none text-[40px]`}
+            >
+              Presale
+            </h3>
+            <p
+              className={`${inria_serif_bold.className} text-[#F7D05A] text-[15px] py-4 pt-8`}
+            >
+              400 OKD
+            </p>
+            <p
+              className={`${inria_serif_regular.className} text-white  text-[15px]`}
+            >
+              AIRDROPPED TO POOKS HOLDERS BASED ON THEIR LEADEBOARD RANKS. THESE
+              WILL BE LOCKED UP FOR 3 MONTHS
+            </p>
+
+            <p
+              className={`${inria_serif_bold.className} text-[#F7D05A] text-[15px] py-4 pt-8`}
+            >
+              1000 OKD
+            </p>
+            <p
+              className={`${inria_serif_regular.className} text-white  text-[15px]`}
+            >
+              FCFS RESERVED FOR OG COMMUNITIES & COLLABS TO MINT
+            </p>
+          </div>
+          <div className="bg-[#353434]  p-12 pb-40  ">
+            <h5
+              className={`${inria_serif_medium.className} text-white text-[15px] leading-none`}
+            >
+              Phase 2
+            </h5>
+            <h3
+              className={`${inria_serif_extra_bold.className} text-[#F7D05A] leading-none text-[40px]`}
+            >
+              Public
+            </h3>
+            <p
+              className={`${inria_serif_bold.className} text-[#F7D05A] text-[15px] py-4 pt-8`}
+            >
+              3500 OKD
+            </p>
+            <p
+              className={`${inria_serif_regular.className} text-white  text-[15px]`}
+            >
+              FCFS PUBLIC MINT FOR EVERYONE
+            </p>
+          </div>{" "}
+          <div className="bg-[#353434]  p-12 pb-40  ">
+            <h5
+              className={`${inria_serif_medium.className} text-white text-[15px] leading-none`}
+            >
+              Phase 3
+            </h5>
+            <h3
+              className={`${inria_serif_extra_bold.className} text-[#F7D05A] leading-none text-[40px]`}
+            >
+              Burn
+            </h3>
+            <p
+              className={`${inria_serif_bold.className} text-[#F7D05A] text-[15px] py-4 pt-8`}
+            >
+              1666 OKD
+            </p>
+            <p
+              className={`${inria_serif_regular.className} text-white  text-[15px]`}
+            >
+              REMAINING SUPPLY RESERVED FOR POOKS TO BE BURNED
+              <br />
+              <br />
+              BURN 3 POOKS TO MINT 1 OKD
+            </p>
+          </div>
+        </div>
       </div>
-    </main>
+    </div>
   );
 }

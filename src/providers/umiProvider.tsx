@@ -15,6 +15,22 @@ function UmiProvider({ children }: { children: React.ReactNode }) {
     umiStore.updateSigner(wallet as unknown as WalletAdapter);
   }, [wallet, umiStore]);
 
+  // fetchCandyMachine every 5 seconds
+  useEffect(() => {
+    // Fetch immediately on mount
+    // umiStore.fetchPriceAndActiveGroup();
+
+    const interval = setInterval(() => {
+      umiStore.fetchPriceAndActiveGroup();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [umiStore]);
+
+  useEffect(() => {
+    umiStore.fetchPriceAndActiveGroup();
+  }, []);
+
   return <>{children}</>;
 }
 

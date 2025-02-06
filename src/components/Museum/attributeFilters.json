@@ -1,0 +1,862 @@
+[
+  {
+    "trait_type": "Background",
+    "filter_type": "enum",
+    "values": [
+      {
+        "option": "Sky Whisper",
+        "count": 877
+      },
+      {
+        "option": "Fall Hike",
+        "count": 834
+      },
+      {
+        "option": "Glacier Purple",
+        "count": 847
+      },
+      {
+        "option": "Morning Waves",
+        "count": 784
+      },
+      {
+        "option": "Dewdrop Delight",
+        "count": 763
+      },
+      {
+        "option": "Strawberry Sunrise",
+        "count": 835
+      },
+      {
+        "option": "Android",
+        "count": 60
+      }
+    ]
+  },
+  {
+    "trait_type": "Body",
+    "filter_type": "enum",
+    "values": [
+      {
+        "option": "Human",
+        "count": 4791
+      },
+      {
+        "option": "Ghost",
+        "count": 149
+      },
+      {
+        "option": "Android",
+        "count": 60
+      }
+    ]
+  },
+  {
+    "trait_type": "Clothing",
+    "filter_type": "enum",
+    "values": [
+      {
+        "option": "Black Full Hoodie",
+        "count": 32
+      },
+      {
+        "option": "Orange POOG Polo",
+        "count": 129
+      },
+      {
+        "option": "Black Leather Jacket",
+        "count": 110
+      },
+      {
+        "option": "White Karate Uniform",
+        "count": 113
+      },
+      {
+        "option": "Pooks Jacket",
+        "count": 102
+      },
+      {
+        "option": "Black Turtle Neck",
+        "count": 124
+      },
+      {
+        "option": "Blue Button Up",
+        "count": 126
+      },
+      {
+        "option": "Black Letterman Jacket",
+        "count": 112
+      },
+      {
+        "option": "Blue POOG Polo",
+        "count": 145
+      },
+      {
+        "option": "Green Hoodie",
+        "count": 124
+      },
+      {
+        "option": "Orange Hoodie",
+        "count": 122
+      },
+      {
+        "option": "Green Full Hoodie",
+        "count": 40
+      },
+      {
+        "option": "Denim Jacket",
+        "count": 103
+      },
+      {
+        "option": "Hawaii Button Up",
+        "count": 100
+      },
+      {
+        "option": "White Puffer",
+        "count": 99
+      },
+      {
+        "option": "Yellow and Black Crewneck",
+        "count": 102
+      },
+      {
+        "option": "Black Kimono",
+        "count": 120
+      },
+      {
+        "option": "Duck Onesie",
+        "count": 23
+      },
+      {
+        "option": "Blue Hoodie",
+        "count": 142
+      },
+      {
+        "option": "Red Button Up",
+        "count": 109
+      },
+      {
+        "option": "Turtle Neck Vest",
+        "count": 101
+      },
+      {
+        "option": "White Hoodie",
+        "count": 83
+      },
+      {
+        "option": "Green Button Up",
+        "count": 125
+      },
+      {
+        "option": "Big Puffer",
+        "count": 61
+      },
+      {
+        "option": "Red and Navy Flannel",
+        "count": 117
+      },
+      {
+        "option": "Grey Crewneck",
+        "count": 98
+      },
+      {
+        "option": "Black Karate Uniform",
+        "count": 109
+      },
+      {
+        "option": "Shark Onesie",
+        "count": 19
+      },
+      {
+        "option": "Red Changshan",
+        "count": 138
+      },
+      {
+        "option": "Orange Full Hoodie",
+        "count": 45
+      },
+      {
+        "option": "Pimp Coat",
+        "count": 48
+      },
+      {
+        "option": "Dark Blue Kimono",
+        "count": 115
+      },
+      {
+        "option": "Brown Turtle Neck",
+        "count": 100
+      },
+      {
+        "option": "Old School Windbreaker",
+        "count": 100
+      },
+      {
+        "option": "Orange Tee",
+        "count": 97
+      },
+      {
+        "option": "Green POOG Polo",
+        "count": 88
+      },
+      {
+        "option": "Black Tee",
+        "count": 102
+      },
+      {
+        "option": "Vest",
+        "count": 107
+      },
+      {
+        "option": "Beige Suit",
+        "count": 99
+      },
+      {
+        "option": "Orange Puffer",
+        "count": 112
+      },
+      {
+        "option": "White Full Hoodie",
+        "count": 38
+      },
+      {
+        "option": "Orange Letterman Jacket",
+        "count": 126
+      },
+      {
+        "option": "Orange Button Up",
+        "count": 117
+      },
+      {
+        "option": "Navy Suit",
+        "count": 120
+      },
+      {
+        "option": "Black Hoodie",
+        "count": 102
+      },
+      {
+        "option": "Gold Chain",
+        "count": 12
+      },
+      {
+        "option": "Red POOG Polo",
+        "count": 134
+      },
+      {
+        "option": "White Tee",
+        "count": 88
+      },
+      {
+        "option": "Blue Full Hoodie",
+        "count": 45
+      },
+      {
+        "option": "Tiger Onesie",
+        "count": 24
+      },
+      {
+        "option": "Black Suit",
+        "count": 102
+      },
+      {
+        "option": "Off Yellow Flannel",
+        "count": 114
+      },
+      {
+        "option": "Dragon Onesie",
+        "count": 34
+      },
+      {
+        "option": "None",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "trait_type": "Eyes",
+    "filter_type": "enum",
+    "values": [
+      {
+        "option": "Neutral",
+        "count": 1848
+      },
+      {
+        "option": "Angry",
+        "count": 1790
+      },
+      {
+        "option": "Ghost",
+        "count": 816
+      },
+      {
+        "option": "Yellow Glow",
+        "count": 221
+      },
+      {
+        "option": "White Glow",
+        "count": 265
+      },
+      {
+        "option": "Android",
+        "count": 60
+      }
+    ]
+  },
+  {
+    "trait_type": "Eyewear",
+    "filter_type": "enum",
+    "values": [
+      {
+        "option": "Black Wayfarers",
+        "count": 225
+      },
+      {
+        "option": "Blue Wayfarers",
+        "count": 214
+      },
+      {
+        "option": "Red Wayfarers",
+        "count": 232
+      },
+      {
+        "option": "Tortoise Wayfarer Sunglasses",
+        "count": 228
+      },
+      {
+        "option": "Clubmasters",
+        "count": 246
+      },
+      {
+        "option": "Hipster Sunglasses",
+        "count": 228
+      },
+      {
+        "option": "Green Wayfarers",
+        "count": 240
+      },
+      {
+        "option": "Speedways",
+        "count": 145
+      },
+      {
+        "option": "Rose Gold Circle Frames",
+        "count": 87
+      },
+      {
+        "option": "Iconic Sunglasses",
+        "count": 232
+      },
+      {
+        "option": "Blindfold",
+        "count": 215
+      },
+      {
+        "option": "Black Circle Frames",
+        "count": 238
+      },
+      {
+        "option": "Orange Wayfarers",
+        "count": 217
+      },
+      {
+        "option": "Aviators",
+        "count": 224
+      },
+      {
+        "option": "Vintage Sunglasses",
+        "count": 197
+      },
+      {
+        "option": "Clear Wayfarers",
+        "count": 233
+      },
+      {
+        "option": "Gold Circle Frames",
+        "count": 82
+      },
+      {
+        "option": "Pit Vipers",
+        "count": 108
+      }
+    ]
+  },
+  {
+    "trait_type": "Hair",
+    "filter_type": "enum",
+    "values": [
+      {
+        "option": "Blond Bowl",
+        "count": 107
+      },
+      {
+        "option": "Silver Bowl",
+        "count": 116
+      },
+      {
+        "option": "Dark Brown Fade",
+        "count": 131
+      },
+      {
+        "option": "Light Brown Dreads",
+        "count": 111
+      },
+      {
+        "option": "Silver Messy",
+        "count": 119
+      },
+      {
+        "option": "Light Brown Bowl",
+        "count": 107
+      },
+      {
+        "option": "Light Brown Messy",
+        "count": 122
+      },
+      {
+        "option": "Dark Brown Bowl",
+        "count": 108
+      },
+      {
+        "option": "Blond Slickback",
+        "count": 112
+      },
+      {
+        "option": "Blond Fade",
+        "count": 131
+      },
+      {
+        "option": "Light Brown Flowy",
+        "count": 126
+      },
+      {
+        "option": "Silver Fade",
+        "count": 105
+      },
+      {
+        "option": "Black Short Spiky",
+        "count": 113
+      },
+      {
+        "option": "Silver Dreads",
+        "count": 128
+      },
+      {
+        "option": "Maroon Slickback",
+        "count": 112
+      },
+      {
+        "option": "Maroon Short Spiky",
+        "count": 125
+      },
+      {
+        "option": "Blond Short Spiky",
+        "count": 127
+      },
+      {
+        "option": "Dark Brown Short Spiky",
+        "count": 110
+      },
+      {
+        "option": "Bald",
+        "count": 25
+      },
+      {
+        "option": "Dark Brown Messy",
+        "count": 124
+      },
+      {
+        "option": "Light Brown Slickback",
+        "count": 118
+      },
+      {
+        "option": "Dark Brown Flowy",
+        "count": 105
+      },
+      {
+        "option": "Black Slickback",
+        "count": 124
+      },
+      {
+        "option": "Black Bowl",
+        "count": 112
+      },
+      {
+        "option": "Black Fade",
+        "count": 124
+      },
+      {
+        "option": "Maroon Fade",
+        "count": 120
+      },
+      {
+        "option": "Black Messy",
+        "count": 119
+      },
+      {
+        "option": "Maroon Messy",
+        "count": 122
+      },
+      {
+        "option": "Maroon Dreads",
+        "count": 109
+      },
+      {
+        "option": "Black Flowy",
+        "count": 137
+      },
+      {
+        "option": "Blond Flowy",
+        "count": 116
+      },
+      {
+        "option": "Silver Slickback",
+        "count": 103
+      },
+      {
+        "option": "Maroon Flowy",
+        "count": 103
+      },
+      {
+        "option": "Maroon Bowl",
+        "count": 103
+      },
+      {
+        "option": "Silver Flowy",
+        "count": 108
+      },
+      {
+        "option": "Dark Brown Slickback",
+        "count": 120
+      },
+      {
+        "option": "Light Brown Short Spiky",
+        "count": 112
+      },
+      {
+        "option": "Silver Short Spiky",
+        "count": 107
+      },
+      {
+        "option": "Blond Dreads",
+        "count": 127
+      },
+      {
+        "option": "Light Brown Fade",
+        "count": 127
+      },
+      {
+        "option": "Dark Brown Dreads",
+        "count": 106
+      },
+      {
+        "option": "Blond Messy",
+        "count": 123
+      },
+      {
+        "option": "Flame",
+        "count": 23
+      },
+      {
+        "option": "Black Dreads",
+        "count": 136
+      }
+    ]
+  },
+  {
+    "trait_type": "Mouth",
+    "filter_type": "enum",
+    "values": [
+      {
+        "option": "Whistle",
+        "count": 320
+      },
+      {
+        "option": "Neutral",
+        "count": 1000
+      },
+      {
+        "option": "Smirk",
+        "count": 974
+      },
+      {
+        "option": "Big",
+        "count": 929
+      },
+      {
+        "option": "Toothpick",
+        "count": 391
+      },
+      {
+        "option": "Water",
+        "count": 98
+      },
+      {
+        "option": "Pipe",
+        "count": 480
+      },
+      {
+        "option": "Cigar",
+        "count": 249
+      },
+      {
+        "option": "Smoke",
+        "count": 100
+      },
+      {
+        "option": "Gold Grill",
+        "count": 144
+      },
+      {
+        "option": "Fire",
+        "count": 100
+      },
+      {
+        "option": "Mask",
+        "count": 95
+      },
+      {
+        "option": "Diamond Grill",
+        "count": 120
+      }
+    ]
+  },
+  {
+    "trait_type": "Headwear",
+    "filter_type": "enum",
+    "values": [
+      {
+        "option": "Red String Hat",
+        "count": 89
+      },
+      {
+        "option": "Grey Trapper Hat",
+        "count": 54
+      },
+      {
+        "option": "Blue Bucket Hat",
+        "count": 85
+      },
+      {
+        "option": "Black Cap",
+        "count": 98
+      },
+      {
+        "option": "Red Cap",
+        "count": 90
+      },
+      {
+        "option": "Smoke Cowboy Hat",
+        "count": 17
+      },
+      {
+        "option": "Red Beanie",
+        "count": 81
+      },
+      {
+        "option": "Green Cap",
+        "count": 87
+      },
+      {
+        "option": "White Cap",
+        "count": 103
+      },
+      {
+        "option": "Brown Beanie",
+        "count": 80
+      },
+      {
+        "option": "Rose Gold Crown",
+        "count": 18
+      },
+      {
+        "option": "Cowboy",
+        "count": 51
+      },
+      {
+        "option": "Blue String Hat",
+        "count": 69
+      },
+      {
+        "option": "Black Beanie",
+        "count": 79
+      },
+      {
+        "option": "Green Bucket Hat",
+        "count": 78
+      },
+      {
+        "option": "Orange Beanie",
+        "count": 86
+      },
+      {
+        "option": "Red Bucket Hat",
+        "count": 80
+      },
+      {
+        "option": "Tin Hat",
+        "count": 51
+      },
+      {
+        "option": "Orange Bucket Hat",
+        "count": 80
+      },
+      {
+        "option": "Blue Beanie",
+        "count": 99
+      },
+      {
+        "option": "Straw Hat",
+        "count": 75
+      },
+      {
+        "option": "White Ski Mask",
+        "count": 55
+      },
+      {
+        "option": "Black Ski Mask",
+        "count": 44
+      },
+      {
+        "option": "Green Beanie",
+        "count": 81
+      },
+      {
+        "option": "OId School Cowboy",
+        "count": 49
+      },
+      {
+        "option": "Brown Trapper Hat",
+        "count": 56
+      },
+      {
+        "option": "White Bucket Hat",
+        "count": 91
+      },
+      {
+        "option": "Black Backwards Cap",
+        "count": 66
+      },
+      {
+        "option": "Panda Hat",
+        "count": 27
+      },
+      {
+        "option": "Monkey Hat",
+        "count": 26
+      },
+      {
+        "option": "Flame Beanie",
+        "count": 19
+      },
+      {
+        "option": "White Beanie",
+        "count": 74
+      },
+      {
+        "option": "Blue Cap",
+        "count": 73
+      },
+      {
+        "option": "Orange String Hat",
+        "count": 63
+      },
+      {
+        "option": "Orange Cap",
+        "count": 95
+      },
+      {
+        "option": "Light Brown Cap",
+        "count": 69
+      },
+      {
+        "option": "White Backwards Cap",
+        "count": 76
+      },
+      {
+        "option": "Cat Hat",
+        "count": 26
+      },
+      {
+        "option": "Lightning Tin Hat",
+        "count": 18
+      },
+      {
+        "option": "Light Brown Bucket Hat",
+        "count": 84
+      },
+      {
+        "option": "Dog Hat",
+        "count": 25
+      }
+    ]
+  },
+  {
+    "trait_type": "Tattoo",
+    "filter_type": "enum",
+    "values": [
+      {
+        "option": "Koi Fish Tattoo",
+        "count": 193
+      },
+      {
+        "option": "Dragon Tattoo",
+        "count": 195
+      }
+    ]
+  },
+  {
+    "trait_type": "Accessories",
+    "filter_type": "enum",
+    "values": [
+      {
+        "option": "Ice Cream Earring",
+        "count": 102
+      },
+      {
+        "option": "Gold Hoop",
+        "count": 204
+      },
+      {
+        "option": "Diamond Stud",
+        "count": 181
+      },
+      {
+        "option": "Panda Earring",
+        "count": 95
+      },
+      {
+        "option": "Black Dagger Earring",
+        "count": 99
+      },
+      {
+        "option": "Smiley Face Earring",
+        "count": 213
+      },
+      {
+        "option": "Black Hoop",
+        "count": 224
+      },
+      {
+        "option": "Rose Earring",
+        "count": 209
+      },
+      {
+        "option": "Silver Hoop",
+        "count": 182
+      },
+      {
+        "option": "? Earring",
+        "count": 88
+      },
+      {
+        "option": "Thunder Earring",
+        "count": 85
+      },
+      {
+        "option": "Rose Gold Earring",
+        "count": 74
+      }
+    ]
+  }
+]

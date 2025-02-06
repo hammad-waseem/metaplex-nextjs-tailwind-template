@@ -1,0 +1,306 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "~react-perfect-scrollbar/dist/css/styles.css";
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+/* @import "~@solana/wallet-adapter-react-ui/styles.css"; */
+@import "./solana-react-ui.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import "./ReactToastify.css";
+
+:root {
+  /* --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255; */
+}
+
+@media (prefers-color-scheme: dark) {
+  /* :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  } */
+}
+img {
+  max-width: 100%;
+}
+body {
+  /* color: rgb(var(--foreground-rgb)); */
+  background: #fff9eb;
+  max-height: 100%;
+  max-width: 100%;
+  font-family: "Rubik",serif;
+}
+
+@layer utilities {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .inria-serif-light {
+    font-family: "Inria Serif", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  .inria-serif-regular {
+    font-family: "Inria Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .inria-serif-bold {
+    font-family: "Inria Serif", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  .inria-serif-light-italic {
+    font-family: "Inria Serif", serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .inria-serif-regular-italic {
+    font-family: "Inria Serif", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .inria-serif-bold-italic {
+    font-family: "Inria Serif", serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  .gray-border {
+    border-color: #c1c1c1;
+  }
+
+  .stroke {
+    border-color: #dbdad9;
+  }
+
+  .stroke-2 {
+    border-color: #787878;
+  }
+
+  .text-primary {
+    color: #ff9534;
+  }
+  .bg-primary {
+    background: #ff9c41;
+  }
+
+  .hide-item {
+    display: none;
+  }
+  .show-item {
+    display: block;
+  }
+}
+.gallery-input input[type="checkbox"],
+.gallery-input input[type="radio"] {
+  --active: #f7d05a;
+  --active-inner: #fff;
+  --border: #000;
+  --border-hover: #000;
+  --background: #fff;
+  --disabled: #f6f8ff;
+  --disabled-inner: #e1e6f9;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 16px;
+  width: 17px;
+  outline: none;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  border-radius: 100%;
+  margin: 0;
+  cursor: pointer;
+  border: 2px solid var(--border);
+  background: var(--b, var(--background));
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+}
+.gallery-input input[type="checkbox"]:checked,
+.gallery-input input[type="radio"]:checked {
+  --b: var(--active);
+  --bc: var(--active);
+  --d-o: 0.3s;
+  --d-t: 0.6s;
+  --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
+}
+
+.scroll-container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  overflow-x: auto; /* 'overlay' is not widely supported, replaced with 'auto' */
+  overflow-y: hidden;
+  scroll-margin-bottom: 10px;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling for WebKit browsers */
+}
+
+/* Hide scrollbar by default */
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Show scrollbar on hover */
+.scroll-container:hover::-webkit-scrollbar {
+  display: inherit;
+  height: 10px;
+}
+
+/* Customize scrollbar thumb */
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #b5b5b5;
+  border-radius: 5px;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* For Firefox */
+.hide-scrollbar {
+  scrollbar-width: none !important;
+}
+
+/* .wallet-list div:last-child {
+  border-bottom: 1px solid black;
+} */
+
+.tiny-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #ff9534;
+  border-color: #ff9534 transparent #ff9534 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.slick-dots li button:before {
+  font-size: 14px;
+}
+.slick-dots li {
+  width: 10px;
+}
+
+/* .nft-items-list-wrap */
+
+@media only screen and (max-width: 1023) {
+  .nft-items-list-wrap {
+    width: calc(100vw ) !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .nft-items-list-wrap {
+    width: calc(100vw) !important;
+  }
+}
+
+@media only screen and (min-width: 822px) and (max-width: 1024px) {
+  .control-items-width {
+    min-width: 822px;
+  }
+}
+
+
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+  .control-scroll-width {
+    max-width:  calc(100vw - 70vw) !important;
+   
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .control-scroll-width {
+    max-width:  calc(100vw - 75vw) !important;
+  }
+} 
+
+/* @media only screen and (min-width: 1281px) and (max-width: 1536px) {
+  .control-scroll-width {
+    min-width: 540px;
+  }
+} */
+
+.rounded-shape {
+  border-radius: 9999px;
+}
+
+.border-rounded-top {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  /* border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000; */
+}
+
+.light-border {
+  border: 1px solid #000;
+}
+
+.border-rounded-top-left {
+  border-top-left-radius: 25px;
+}
+
+.border-rounded-top-right {
+  border-top-right-radius: 25px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  /* box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3) !important; */
+  border-radius: 10px !important;
+  background-color: #757575 !important;
+  border: 1px solid #000;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  border-radius: 10px !important;
+  margin-left: 1rem !important;
+  width: 12px !important;
+  background-color: #f7d05a !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 10px !important;
+  /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3) !important; */
+  background-color: #f7d05a !important;
+  height: 1rem !important;
+  border: 1px solid #000;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
